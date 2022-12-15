@@ -1,0 +1,154 @@
+.mainContainer {
+    background: #fff;
+    font-family: Assistant, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    /* background: linear-gradient(to top, #fff , #FFB300); */
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    width: 300px;
+    height: auto;
+  }
+  
+  @-webkit-keyframes flash {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes flash {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .flash:hover {
+    opacity: 1;
+    -webkit-animation: flash 1s;
+    animation: flash 1s;
+  }
+  
+  @-webkit-keyframes flash {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+  @keyframes flash {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+  
+  .links {
+    /* margin-top: 50px; */
+  }
+  
+  .inputs {
+    /* margin-top: 50px; */
+  }
+
+  .NameInput {
+    display:flex;
+    justify-content: flex-end;
+  }
+  .emailInput {
+    display:flex;
+    justify-content: flex-end;
+  }
+  .passInput {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  .login {
+    /* color: white; */
+    /* background: #136a8a; */
+    /* background: -webkit-linear-gradient(to bottom, #fff, #fff); */
+    /* background: linear-gradient(to bottom, #fff, #e7c253); */
+    margin: auto;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.3),
+      0px 30px 60px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 50px;
+    border: 4px solid #FFBF00;
+  }
+  .login .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login .head .company {
+    font-size: 2.2em;
+  }
+  .login .msg {
+    text-align: center;
+  }
+  .login .form input[type="email"].text {
+    display: flex;
+    border: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px black;
+    width: 100%;
+    color: black;
+    font-size: 1em;
+    outline: none;
+  }
+  .login .form .text::placeholder {
+    color: black;
+  }
+  .login .form input[type="password"].password {
+    border: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px black;
+    width: 100%;
+    color: black;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .login .form input[type="text"].password {
+    border: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px black;
+    width: 100%;
+    color: black;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .login .form .password::placeholder {
+    color: black;
+  }
+
+  .login .forgot {
+    text-decoration: none;
+    color: black;
+    float: right;
+  }

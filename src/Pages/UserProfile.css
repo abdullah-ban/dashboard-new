@@ -1,0 +1,14 @@
+.card {
+  width: 250px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+#circle-avatar {
+  display: grid;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffbd30;
+  place-items: center;
+}

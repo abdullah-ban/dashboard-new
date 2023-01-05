@@ -44,7 +44,7 @@ const ListCustomers = () => {
       .then((result) => {
         console.log(result);
         setCustomers(result.data.data);
-        if (result.status === 1) {
+        if (result.status === 200) {
           setLoading(false);
         }
       })
@@ -160,7 +160,7 @@ const ListCustomers = () => {
                     />
                   </div>
                 ) : (
-                  ""
+                  false
                 )}
                 {customers.length != 0 ? (
                   ""

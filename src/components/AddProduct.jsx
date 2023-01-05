@@ -8,6 +8,9 @@ import { useStateContext } from "../context/ContextProvider";
 import Header from "./Header";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { de } from "date-fns/locale";
+import { data } from "autoprefixer";
+
 
 const AddCourse = () => {
   const {
@@ -21,6 +24,9 @@ const AddCourse = () => {
   // Hooks
   const [image, setImage] = useState([]);
   const [inputAdd, setInputAdd] = useState([]);
+
+
+
 
   // Categories
   const [getCat, setGetCat] = useState([]);
@@ -36,14 +42,25 @@ const AddCourse = () => {
 
   const handleAdd = (e) => {
     e.preventDefault();
-    const abc = [...inputAdd, []];
-    setInputAdd(abc);
+    var idd = "id" + Math.random().toString(16).slice(2)
+    let abc = [...inputAdd];
+    abc.push({ id: idd, price:0 });
+    setInputAdd([...abc]);
   };
 
-  const handleDelete = (i) => {
-    const deletevalue = [...inputAdd];
-    deletevalue.splice(i, 1);
-    setInputAdd(deletevalue);
+  const handleDelete = (dataa, e) => {
+    e.preventDefault();
+    console.log("All data", inputAdd);
+    console.log("id", dataa.id);
+
+    let deletevalue = [...inputAdd];
+    console.log("here", deletevalue);
+    deletevalue =  deletevalue.filter(item =>
+      item.id !== dataa.id
+    );
+    console.log("after delete", deletevalue);
+
+    setInputAdd([...deletevalue]);
   };
 
   const handleChangeInputFields = () => {};
@@ -247,11 +264,11 @@ const AddCourse = () => {
                   {/* Form Builder */}
                   {inputAdd.map((data, i) => {
                     return (
-                      <div className="border-2 border-emerald-500 rounded-md mt-5">
+                      <div key={data.id} className="border-2 border-emerald-500 rounded-md mt-5">
                         <div className="flex justify-end px-3 bg-emerald-500 text-white">
                           <button
                             className="rounded-full"
-                            onClick={() => handleDelete(i)}
+                            onClick={(e) => handleDelete(data, e)}
                           >
                             X
                           </button>
